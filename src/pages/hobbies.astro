@@ -1,13 +1,25 @@
-<body>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/hobbies">Hobbies</a>
-  <h1>My Hobbies</h1>
-  <ul>
-    <li>DIY</li>
-    <li>Chloé</li>
-    <li>Dancing</li>
-    <li>Movies</li>
-    <li>Games</li>
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const hobbies = [
+  "DIY homeware items",
+  "Using time with Chloé",
+  "Dancing",
+  "Watching movies",
+  "Playing video games",
+];
+---
+
+<MainLayout title="My Hobbies">
+  <ul
+    class="w-48 text-sm font-medium rounded-lg border bg-gray-700 border-gray-600 text-white"
+  >
+    {
+      hobbies.map((hobby) => (
+        <li class="py-2 px-4 w-full rounded-t-lg border-b border-gray-600">
+          {hobby}
+        </li>
+      ))
+    }
   </ul>
-</body>
+</MainLayout>
